@@ -9,30 +9,32 @@
         android:id="@+id/home_searchContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingVertical="12dp"
+        android:paddingVertical="8dp"
         app:layout_constraintTop_toTopOf="parent"
         android:background="@color/green_dark"
-        android:orientation="vertical">
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/register_tilUsername"
+        android:orientation="horizontal"
+        android:weightSum="8">
+        <EditText
+            android:id="@+id/home_etSearch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/register_lUsername"
-            app:boxCornerRadiusBottomStart="24dp"
-            app:boxCornerRadiusBottomEnd="24dp"
-            app:boxCornerRadiusTopStart="24dp"
-            app:boxCornerRadiusTopEnd="24dp"
-            app:boxBackgroundColor="@color/grey"
-            android:layout_marginHorizontal="36dp">
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/register_etUsername"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="18sp"
-                android:inputType="text"/>
-        </com.google.android.material.textfield.TextInputLayout>
+            android:layout_weight="2"
+            android:background="@drawable/round_grey"
+            android:paddingVertical="8dp"
+            android:paddingHorizontal="12dp"
+            android:maxLines="1"
+            android:layout_marginStart="28dp"/>
+        <android.widget.ImageButton
+            android:id="@+id/home_btnSearch"
+            android:layout_weight="6"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="32dp"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#00000000"
+            android:adjustViewBounds="true"
+            android:src="@drawable/ic_search"/>
     </LinearLayout>
     <ImageView
         android:id="@+id/home_imgHeader"
@@ -42,28 +44,55 @@
         android:src="@drawable/header"
         android:adjustViewBounds="true"
         android:layout_margin="16dp"/>
-    <LinearLayout
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/home_rvProducts"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="2"
+        tools:listitem="@layout/card_product"
+        tools:itemCount="2"
+        app:layout_constraintTop_toBottomOf="@id/home_imgHeader"
+        app:layout_constraintBottom_toTopOf="@id/home_menuContainer"/>
+    <LinearLayout
+        android:id="@+id/home_menuContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/home_imgHeader"
-        android:weightSum="2">
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
+        android:weightSum="4"
+        android:paddingVertical="12dp"
+        android:background="@color/green_dark">
+        <ImageView
+            android:id="@+id/home_imgHome"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"/>
+            android:src="@drawable/ic_home"
+            android:layout_weight="1"
+            android:layout_gravity="center"/>
+        <ImageView
+            android:id="@+id/home_imgCart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_cart"
+            android:layout_weight="1"
+            android:layout_gravity="center"/>
+
+        <ImageView
+            android:id="@+id/home_imgOrders"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_orders"
+            android:layout_weight="1"
+            android:layout_gravity="center"/>
+        <ImageView
+            android:id="@+id/home_imgProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_profile"
+            android:layout_weight="1"
+            android:layout_gravity="center"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

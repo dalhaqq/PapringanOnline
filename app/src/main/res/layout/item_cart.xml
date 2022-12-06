@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginTop="24dp">
+    <CheckBox
+        android:id="@+id/cart_cbCartItem"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:background="?android:attr/listChoiceIndicatorMultiple"
+        android:button="@color/transparent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/cart_ivCartItemImage" />
+
+    <ImageView
+        android:id="@+id/cart_ivCartItemImage"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="8dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/kapur"
+        app:layout_constraintStart_toEndOf="@id/cart_cbCartItem"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toEndOf="@id/cart_ivCartItemImage"
+        app:layout_constraintTop_toTopOf="@id/cart_ivCartItemImage">
+
+        <TextView
+            android:id="@+id/cart_tvCartItemName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/antic_regular"
+            android:text="Kapur Pertanian"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/cart_tvCartItemPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/antic_regular"
+            android:text="Rp15.000"
+            android:textSize="18dp" />
+
+        <include
+            layout="@layout/number_picker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

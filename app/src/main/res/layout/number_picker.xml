@@ -1,0 +1,37 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="130dp"
+    android:layout_height="40dp"
+    android:orientation="horizontal"
+    android:background="@android:color/white">
+    <android.widget.Button
+        android:layout_width="30dp"
+        android:layout_height="match_parent"
+        android:padding="0dp"
+        android:textColor="@android:color/black"
+        android:background="#cccccc"
+        android:id="@+id/btnDecrement"
+        android:textStyle="bold"
+        android:fontFamily="@font/antic_regular"
+        android:text="—"/>
+    <TextView
+        android:layout_width="70dp"
+        android:background="#cccccc"
+        android:layout_height="match_parent"
+        android:text="1"
+        android:textColor="@android:color/black"
+        android:inputType="number"
+        android:id="@+id/tvQuantity"
+        android:gravity="center"
+        />
+    <android.widget.Button
+        android:layout_width="30dp"
+        android:layout_height="match_parent"
+        android:padding="0dp"
+        android:textSize="25sp"
+        android:textColor="@android:color/black"
+        android:background="#cccccc"
+        android:id="@+id/btnIncrement"
+        android:fontFamily="@font/antic_regular"
+        android:text="+"/>
+</LinearLayout>

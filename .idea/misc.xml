@@ -3,15 +3,33 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/ic_home.xml" value="0.124" />
+        <entry key="app/src/main/res/drawable/ic_orders.xml" value="0.1595" />
+        <entry key="app/src/main/res/drawable/ic_profile.xml" value="0.1595" />
+        <entry key="app/src/main/res/drawable/ic_search.xml" value="0.1595" />
+        <entry key="app/src/main/res/drawable/round_grey.xml" value="0.1955" />
         <entry key="app/src/main/res/drawable/rounded_dark_grey.xml" value="0.197" />
         <entry key="app/src/main/res/drawable/rounded_green.xml" value="0.1595" />
         <entry key="app/src/main/res/drawable/rounded_grey.xml" value="0.197" />
         <entry key="app/src/main/res/drawable/rounded_top_green.xml" value="0.197" />
-        <entry key="app/src/main/res/layout/activity_home.xml" value="0.21197916666666666" />
+        <entry key="app/src/main/res/layout/activity_cart.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_change_password.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_checkout.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_home.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.171875" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_order_detail.xml" value="0.14732142857142858" />
+        <entry key="app/src/main/res/layout/activity_orders.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_pesanan.xml" value="0.1875" />
+        <entry key="app/src/main/res/layout/activity_product_detail.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_profile.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.21197916666666666" />
+        <entry key="app/src/main/res/layout/card_product.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/item_cart.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/item_order.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/item_order_detail.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/item_product.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/number_picker.xml" value="0.67" />
       </map>
     </option>
   </component>

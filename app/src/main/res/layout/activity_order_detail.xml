@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OrderDetailActivity">
+
+    <LinearLayout
+        android:id="@+id/orderDetail_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/orderDetail_btnBack"
+            android:layout_width="52dp"
+            android:layout_height="53dp"
+            android:src="@drawable/ic_baseline_arrow_back_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/orderDetail_tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_gravity="center"
+            android:fontFamily="@font/antic_regular"
+            android:text="Detail Pesanan"
+            android:textSize="20dp"
+            app:layout_constraintStart_toEndOf="@id/orderDetail_btnBack"
+            app:layout_constraintTop_toTopOf="parent" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/orderDetail_header">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="16dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/orderDetail_rvProduct"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:listitem="@layout/item_order_detail"
+                tools:itemCount="2"/>
+
+
+            <RelativeLayout
+                android:id="@+id/orderDetail_containerShippingDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="#78C57F"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="12dp"
+                app:layout_constraintTop_toBottomOf="@id/orderDetail_rvProduct">
+
+                <TextView
+                    android:id="@+id/orderDetail_tvShippingTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/antic_regular"
+                    android:text="Opsi Pengiriman"
+                    android:textSize="24dp" />
+
+                <TextView
+                    android:id="@+id/orderDetail_tvShippingService"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/orderDetail_tvShippingTitle"
+                    android:layout_marginTop="6dp"
+                    android:fontFamily="@font/antic_regular"
+                    android:text="JNE Express"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/orderDetail_tvShippingCost"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@id/orderDetail_tvShippingService"
+                    android:layout_alignParentRight="true"
+                    android:fontFamily="@font/antic_regular"
+                    android:text="Rp15.000"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/orderDetail_tvShippingEtd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/orderDetail_tvShippingService"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/antic_regular"
+                    android:text="akan diterima dalam 3-7 hari"
+                    android:textSize="18dp" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/orderDetail_tvPaymentTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/antic_regular"
+                android:text="Metode Pembayaran"
+                android:textSize="20dp"
+                app:layout_constraintTop_toBottomOf="@id/orderDetail_containerShippingDetail" />
+
+            <TextView
+                android:id="@+id/orderDetail_tvPaymentMethodName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:text="Transfer Bank"
+                android:textSize="18dp"
+                android:fontFamily="@font/antic_regular"
+                app:layout_constraintTop_toBottomOf="@id/orderDetail_tvPaymentTitle" />
+            <TextView
+                android:id="@+id/orderDetail_tvPaymentMethodInstruction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:text="Transfer ke rekening 1234567890 a/n PT. Tokopedia"
+                app:layout_constraintTop_toBottomOf="@id/orderDetail_tvPaymentMethodName"/>
+            <RelativeLayout
+                android:id="@+id/orderDetail_containerPaymentDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="16dp"
+                android:paddingVertical="12dp"
+                android:background="#78C57F"
+                app:layout_constraintTop_toBottomOf="@id/orderDetail_tvPaymentMethodInstruction">
+
+                <TextView
+                    android:id="@+id/orderDetail_tvPaymentDetailTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/antic_regular"
+                    android:text="Rincian Pembayaran Produk"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/orderDetail_tvTotalPurchase"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/orderDetail_tvPaymentDetailTitle"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/antic_regular"
+                    android:text="Total pembelian produk"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/orderDetail_tvTotalPurchasePrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/orderDetail_tvPaymentDetailTitle"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/antic_regular"
+                    android:text="Rp15.000"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/orderDetail_tvTotalShippingCost"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/orderDetail_tvTotalPurchase"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/antic_regular"
+                    android:text="Total ongkos kirim"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/orderDetail_tvTotalShippingCostPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/orderDetail_tvTotalPurchase"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginEnd="20dp"
+                    android:fontFamily="@font/antic_regular"
+                    android:text="Rp15.000"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/orderDetail_tvTotalPayment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/orderDetail_tvTotalShippingCost"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/antic_regular"
+                    android:text="Total Pembayaran"
+                    android:textSize="20dp" />
+                <TextView
+                    android:id="@+id/orderDetail_tvTotalPaymentPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/orderDetail_tvTotalShippingCost"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_alignParentRight="true"
+                    android:fontFamily="@font/antic_regular"
+                    android:text="Rp30.000"
+                    android:textSize="20dp" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/orderDetail_tvShippingDetailTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/antic_regular"
+                android:text="Pengiriman"
+                android:textSize="20dp"
+                app:layout_constraintTop_toBottomOf="@id/orderDetail_containerPaymentDetail" />
+
+            <TextView
+                android:id="@+id/orderDetail_tvShippingAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/antic_regular"
+                android:text="Alamat Pengiriman"
+                android:textSize="16dp"
+                app:layout_constraintTop_toBottomOf="@id/orderDetail_tvShippingDetailTitle" />
+
+            <TextView
+                android:id="@+id/orderDetail_tvShippingAddressValue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/antic_regular"
+                android:text="Jalan Pegangsaan Timur, No. 10, Jakarta Barat, 33071"
+                android:textSize="12dp"
+                app:layout_constraintTop_toBottomOf="@id/orderDetail_tvShippingAddress" />
+
+<!--            order status -->
+            <TextView
+                android:id="@+id/orderDetail_tvOrderStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/antic_regular"
+                android:text="Status Pesanan"
+                android:textSize="20dp"
+                app:layout_constraintTop_toBottomOf="@id/orderDetail_tvShippingAddressValue" />
+
+            <TextView
+                android:id="@+id/orderDetail_tvOrderStatusValue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/antic_regular"
+                android:text="Pesanan telah dikirim"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/orderDetail_tvOrderStatus" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
